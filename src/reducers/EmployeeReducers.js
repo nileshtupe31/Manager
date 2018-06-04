@@ -1,5 +1,7 @@
 import {
-  CREATE_EMPLOYEE
+  CREATE_EMPLOYEE,
+  EMPLOYEE_SYCED,
+  EMPLOYEE_FETCH_SUCCESS
  }
  from '../actions/types';
 
@@ -15,6 +17,12 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CREATE_EMPLOYEE:
       return { ...state, [action.payload.prop]: action.payload.value };
+
+    case EMPLOYEE_SYCED:
+      return INITIAL_STATE;
+
+    case EMPLOYEE_FETCH_SUCCESS:
+      return state;
 
     default:
     return state;
